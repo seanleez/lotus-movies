@@ -1,0 +1,20 @@
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+}
+
+.listMode {
+  display: block;
+  padding: 20px 3% 30px;
+}
+
+.error {
+  text-align: center;
+  color: var(--white);
+  margin-top: 150px;
+  font-weight: bold;
+}

@@ -1,0 +1,185 @@
+@import "../../styles/mixin.scss";
+
+.card {
+  margin-top: 25px;
+  display: flex;
+
+  .imageContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 30%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.001) 0%, #000 100%);
+    mix-blend-mode: normal;
+    color: var(--white);
+    padding: 20px;
+
+    .infor {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        margin: 0;
+        &.overview {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-style: italic;
+          -webkit-line-clamp: 4;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        color: var(--red);
+      }
+      .imdb {
+        color: yellow;
+        margin-right: 5px;
+      }
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      min-width: 150px;
+
+      button {
+        display: block;
+        color: var(--white);
+
+        &.addFavorite {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          font-size: 24px;
+          background-color: var(--light);
+        }
+        &.playButton {
+          display: none;
+        }
+        &.watchNowButton {
+          border-radius: 20px;
+          height: 40px;
+          padding: 0 10px;
+          background-color: var(--red);
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@include responsive(xl) {
+  .card {
+    .imageContainer {
+      width: 60%;
+    }
+    .content {
+      padding: 10px 15px;
+      .infor {
+        p.overview {
+          -webkit-line-clamp: 5;
+        }
+      }
+    }
+  }
+}
+
+@include responsive(lg) {
+  .card {
+    .imageContainer {
+      width: 60%;
+    }
+    .content {
+      .infor {
+        p.overview {
+          -webkit-line-clamp: 3;
+        }
+      }
+    }
+  }
+}
+
+@include responsive(md) {
+  .card {
+    .imageContainer {
+      width: 60%;
+    }
+    .content {
+      position: relative;
+      .infor {
+        h3 {
+          font-size: 16px;
+        }
+        p.overview {
+          -webkit-line-clamp: 2;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      .features {
+        position: absolute;
+        left: -160px;
+        bottom: 5px;
+
+        button {
+          &.addFavorite {
+            display: none;
+          }
+          &.watchNowButton {
+            display: none;
+          }
+          &.playButton {
+            display: block;
+            border-radius: 50%;
+            background-color: var(--red);
+            width: 40px;
+            height: 40px;
+            img {
+              width: 100%;
+              height: 100%;
+              filter: invert(100%) sepia(1%) saturate(2041%) hue-rotate(24deg)
+                brightness(88%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive(sm) {
+  .card {
+    .imageContainer {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .formContainer {
+    margin-left: 10%;
+  }
+}

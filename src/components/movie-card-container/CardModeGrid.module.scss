@@ -1,0 +1,103 @@
+@import "../../styles/mixin.scss";
+
+.card {
+  cursor: pointer;
+  position: relative;
+  width: 23%;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+      rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+      rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  }
+
+  .content {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.001) 0%, #000 100%);
+    mix-blend-mode: normal;
+    color: var(--white);
+    bottom: 0;
+    padding: 5px 10px 10px;
+
+    .infor {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 10px 0;
+
+      p {
+        margin: 0;
+      }
+
+      h4 {
+        margin: 0 0 10px;
+        // color: var(--red);
+      }
+
+      .imdb {
+        color: yellow;
+        margin-right: 5px;
+      }
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 10px;
+      min-width: 90px;
+      height: 80px;
+
+      button {
+        display: block;
+        color: var(--white);
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        &:nth-child(1) {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          font-size: 24px;
+          background-color: var(--light);
+        }
+        &:nth-child(2) {
+          border-radius: 15px;
+          min-height: 35px;
+          background-color: var(--red);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@include responsive(xl) {
+  .card {
+    width: 30%;
+  }
+}
+
+@include responsive(md) {
+  .card {
+    width: 45%;
+  }
+}
+@include responsive(sm) {
+  .card {
+    width: 90%;
+  }
+}

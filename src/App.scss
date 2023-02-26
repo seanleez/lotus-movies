@@ -1,0 +1,11 @@
+@import "./styles/variable.scss";
+@import "./styles/mixin.scss";
+
+body {
+  margin: 0;
+  background-color: var(--secondary);
+}
+
+* {
+  box-sizing: border-box;
+}

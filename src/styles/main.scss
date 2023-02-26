@@ -1,0 +1,39 @@
+@import "./variable.scss";
+@import "./mixin.scss";
+
+// CSS pass down for entire projects
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button.primary-button {
+  border-radius: 20px;
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+
+  &:hover {
+    background-color: var(--secondary) !important;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.ptr__pull-down {
+  .ptr__loader {
+    .lds-ellipsis {
+      div {
+        background-color: var(--white);
+      }
+    }
+  }
+}

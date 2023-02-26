@@ -1,0 +1,29 @@
+.modal {
+  background-color: white;
+  position: absolute;
+  z-index: 9999;
+  width: 350px;
+  max-height: 250px;
+  padding: 0 10px 10px;
+  background-color: var(--light);
+  border-radius: 10px;
+  color: var(--white);
+  background: linear-gradient(180deg, var(--red) 0%, var(--light) 100%);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  h4 {
+    margin: 15px 0;
+  }
+
+  .overview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: italic;
+  }
+  .imdb {
+    color: yellow;
+    margin-right: 5px;
+  }
+}
